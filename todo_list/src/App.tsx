@@ -7,6 +7,9 @@ export type FilterValuesType = "all" | "completed" | "active";
 
 function App() {
 
+        // let tasks = arr[0];
+        // let setTasks = arr[1]; => can be written shorter:
+
     let [tasks, setTasks] = useState([          // destructurization
         {id: 1, title: "CSS", isDone: true},
         {id: 2, title: "JS", isDone: true},
@@ -14,11 +17,8 @@ function App() {
         {id: 4, title: "Redux", isDone: false}
     ]);
 
-
     let[filter, setFilter] = useState<FilterValuesType>("completed");
 
-    // let tasks = arr[0];
-    // let setTasks = arr[1];
 
     function removeTask(id: number) {
         let filteredTasks = tasks.filter(t => t.id !== id)
